@@ -71,17 +71,17 @@ def int_input():
 def generate_energy_levels(r_h, n):
     energy_list = []
     for i in range(1, n + 1):
-        energy_list.append(float(r_h / math.pow(i, 2)))
-
+        val = -float(r_h) / float(math.pow(i, 2))
+        energy_list.append(val)
+        print("n = {0} : En = {1}".format(i, val))
     return energy_list
 
 
 # Given the list of energy levels, calculate all possible delta_E values
 def calculate_delta_e(e_list, n_final):
-    list_size = len(e_list) - n_final
     delta_e_list = []
     for i in range(len(e_list) - 1, n_final - 1, -1):
-        val = e_list[i] - e_list[n_final - 1]
+        val = e_list[n_final - 1] - e_list[i]
         delta_e_list.append(val)
         print(i + 1, "->", n_final, ":", val)
     return delta_e_list
@@ -89,11 +89,7 @@ def calculate_delta_e(e_list, n_final):
 
 # lambda = h*c / E
 def calculate_wavelength(d_e_list, n_final):
-
-    list_size = len(d_e_list)
-    print(list_size)
     wavelength_list = []
-    print(d_e_list)
     for i in range(0, len(d_e_list)):
         val = float((h * c) / d_e_list[i])
         wavelength_list.append(val)
