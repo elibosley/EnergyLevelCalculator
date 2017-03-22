@@ -19,12 +19,11 @@ def main():
 
 def run_delta_e_wavelength(e_list, n_final_list):
     for n_final in n_final_list:
+        print("-----------------------DELTA-E (J)-----------------------")
         d_e_list = calculate_delta_e(e_list, n_final)
-        print("-----------------------------------------------")
+        print("---------------------WAVELENGTH (nm)---------------------")
         calculate_wavelength(d_e_list, n_final)
-        print("-----------------------------------------------")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("-----------------------------------------------")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
 # Function to parse a csv integer input and check that all entered values are both integers and in csv or single
